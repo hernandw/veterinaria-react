@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Error from "./Error";
+import { getId } from "../assets/getId";
 
-const Formulario = ({ pacientes, setPacientes }) => {
+const Formulario = ({ pacientes, setPacientes, paciente }) => {
   const [name, setName] = useState("");
   const [owner, setOwner] = useState("");
   const [email, setEmail] = useState("");
   const [alta, setAlta] = useState("");
   const [sintomas, setSintomas] = useState("");
   const [error, setError] = useState(false);
+  useEffect(() => {
+    if (Object.keys(paciente).length > 0) {
+      const { name, owner, email, alta, sintomas } = paciente;
+      setName(name);
+      setOwner(owner);
+      setEmail(email);
+      setAlta(alta);
+      setSintomas(sintomas);
+    }
+  }, [paciente]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,9 +37,19 @@ const Formulario = ({ pacientes, setPacientes }) => {
       email,
       alta,
       sintomas,
+      
     };
-    //Agregamos a listado Pacientes
+
+    if(paciente.id){
+      objetoPaciente.id = paciente.id
+      const pacienteUpdate = pacientes.map(pacienteState => pacienteState.id === paciente.id ? objetoPaciente : pacienteState)
+      setPacientes(pacienteUpdate)
+    }else{
+      //Agregamos a listado Pacientes
+    objetoPaciente.id = getId(),
     setPacientes([...pacientes, objetoPaciente]);
+    }
+    
     //Reseteamos el Formulario
     setName("");
     setOwner("");
