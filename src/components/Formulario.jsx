@@ -3,12 +3,12 @@ import React from "react";
 const Formulario = () => {
   return (
     <div className="md:w-1/2 lg:w-2/5">
-      <h2 className="font-black text-3xl text-center">Seguimiento Pacientes</h2>
+      <h2 className="font-black text-2xl text-center">Seguimiento Pacientes</h2>
       <p className="text-lg mb-10 mt-5 text-center">
         Añade Pacientes y{" "}
         <span className="text-indigo-600 font-bold">Administralos</span>
       </p>
-      <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
+      <form className="bg-white shadow-md rounded-lg p-2 py-10 mb-10 mx-6">
         <div className="mb-5">
           <label
             htmlFor="name"

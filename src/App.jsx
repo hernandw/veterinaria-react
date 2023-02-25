@@ -5,7 +5,7 @@ import ListadoPacientes from './components/ListadoPacientes'
 
 const App = () => {
   return (
-    <div className='container mx-10 mt-20'>
+    <div className='container mt-20'>
       <Header />
       <div className='md:flex mt-12'>
       <Formulario />
