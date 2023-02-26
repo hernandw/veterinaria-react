@@ -126,7 +126,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             Fecha de Alta
           </label>
           <input
-            id="name"
+            id="Alta"
             type="date"
             className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
             value={alta}
@@ -141,7 +141,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             Síntomas
           </label>
           <textarea
-            name=""
+            
             id="sintomas"
             cols="30"
             rows="4
